@@ -9,5 +9,3 @@ const updateUniqueItems = (items) => {
   }
   return items;
 };
-
-sh: 1: q: not found
