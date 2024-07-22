@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "compilerOptions": {
     "outDir": "./dist/",
     "sourceMap": true,
@@ -9,3 +10,15 @@
     "moduleResolution": "node"
   }
 }
+=======
+    "compilerOptions": {
+      "outDir": "./dist/",
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "module": "es6",
+      "target": "es5",
+      "allowJs": true,
+      "moduleResolution": "node"
+    }
+  }
+>>>>>>> a22c62665ccb65d057512690da03e90684052db4

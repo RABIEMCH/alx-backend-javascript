@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # :book: 0x04-TypeScript.
 ## :page_with_curl: Topics Covered
 1. ES6 Data Structures;
@@ -613,3 +614,6 @@ This project was done by [SE. Moses Mwangi](https://github.com/MosesSoftEng). Fe
 :email: Email [moses.soft.eng@gmail.com](mailto:moses.soft.eng@gmail.com)
 
 :thumbsup: A lot of thanks to [ALX-Africa Software Engineering](https://www.alxafrica.com/) program for the project and learning resources.
+=======
+# 0x04-TypeScript
+>>>>>>> a22c62665ccb65d057512690da03e90684052db4
