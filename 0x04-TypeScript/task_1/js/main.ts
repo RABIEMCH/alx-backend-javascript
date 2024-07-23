@@ -1,106 +1,51 @@
-<<<<<<< HEAD
-interface Teacher {
-  readonly  firstName: string;
-  readonly  lastName: string;
+export interface Teacher {
+  readonly firstName: string;
+  readonly lastName: string;
   fullTimeEmployee: boolean;
-  location: string;
   yearsOfExperience?: number;
-  [propName: string]: any;
+  location: string;
+  [index:string]: any;
 }
 
-const teacher3: Teacher = {
-  firstName: 'John',
-  fullTimeEmployee: false,
-  lastName: 'Doe',
-  location: 'London',
-  contract: false,
-};
-
-console.log(teacher3);
-
-
-interface Directors extends Teacher {
+export interface Directors extends Teacher {
   numberOfReports: number;
 }
 
-const director1: Directors = {
-  firstName: 'John',
-  lastName: 'Doe',
-  location: 'London',
-  fullTimeEmployee: true,
-  numberOfReports: 17,
-};
-
-console.log(director1);
-
-interface PrintTeacherFunction {
+export interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: PrintTeacherFunction = function(firstName, lastName) {
-  return `${firstName.charAt(0)}.${lastName}`;
-};
+export function printTeacher(firstName: string, lastName: string): string {
+  return `${firstName[0]}. ${lastName}`;
+}
 
-interface StudentClassInterface  {
+export interface IStudentClassConstructor {
+  new (firstName: string, lastName: string): IStudentClass;
+}
+
+export interface IStudentClass {
   workOnHomework(): string;
   displayName(): string;
 }
 
-interface StudentConstructor {
-  new(firstName: string, lastName: string): StudentClassInterface;
-}
-
-class StudentClass implements StudentClassInterface {
-  firstName: string;
-  lastName: string;
+export class StudentClass implements IStudentClass {
+  private _firstName!: string;
+  private _lastName!: string;
 
   constructor(firstName: string, lastName: string) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this._firstName = firstName;
+    this._lastName = lastName;
   }
 
-  workOnHomework(): string {
+  workOnHomework() {
     return 'Currently working';
   }
 
-  displayName(): string {
-    return this.firstName;
+  displayName() {
+    return this._firstName;
   }
-=======
-/*interface Teacher {
-    firstName: string,
-    lastName: string,
-    location: string,
-    fullTimeEmployee: true | false,
-    yearsOfExperience?: number,
-    contract?: any
-}
-interface Directors extends Teacher {
-    numberOfReports: number
-}*/
-
-interface user {
-    firstName: string,
-    lastName: string
 }
 
-class StudentClass {
-    firstName: string;
-    lastName: string;
-
-    constructor(firstName: string, lastName: string) {
-        this.firstName = firstName,
-        this.lastName = lastName
-    }
-
-    workOnHomework() {
-        console.log("Currently working")
-        return ("Currently working")
-    }
-
-    displayName() {
-        console.log(this.firstName)
-        return this.firstName;
-    }
->>>>>>> a22c62665ccb65d057512690da03e90684052db4
+export function createStudent(ctor: IStudentClassConstructor, firstName: string, lastName: string): IStudentClass {
+  return new ctor(firstName, lastName);
 }
